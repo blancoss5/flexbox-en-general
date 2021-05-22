@@ -1,0 +1,82 @@
+.padre{
+    width: 90%;
+    height: 600px;
+    background-color: gray;
+    border: 1px solid black;
+    /*en vez de float se puede escribir..
+    display:flex;*/
+    
+    display: flex;
+    flex-flow: row wrap;/*flex direcction y flex wrap*/
+    /*hijos flexibles, no nietos*/
+/*++++++++++PARA EL EJE PRINCIPAL++++++++++++*/
+/*   flex-direction: row;
+     por defecto es row
+    row reverse es row alreves
+    */
+
+/*      justify-content: flex-end; se van todos al final
+        //      //      flex-star; por defecto
+        //      //       space-around; todos tienen los mismos espacios excepto los principios
+        //      //       space-between; los de los costados no tiene espaciado
+                            y los demas se dividen el espacio del medio
+        //      //      space-evenly; como el arround pero el principio y el final tienen el mismo espacio
+        //      //         center; se van todos al centro y juntos
+            */
+   justify-content: space-evenly;
+
+/*+++++EJE CRUZADO O Y +++++++++*/
+       /* flex-direction: column-reverse;
+        column o column reverse*/
+ /*        align-items: flex-end;
+         ///            flex-start;
+                        stretch;   solo usa el espacio necesario
+                        center
+        
+        
+        *//*
+    flex-wrap: wrap;respetan su tamaño los hijos
+    no-wrap no respetan o por defecto
+    wrap-reverse se refleja sobre el eje x
+    */
+  
+   /* align-content: center; lo centrea, como align items pero mejor*/
+}
+.hijo{
+
+    padding: 25px;
+    border: 1px solid black;
+  /*AL HIJO!!*  flex-grow: 1;indica que tanto puede crecer un contenedor
+  flex-shrink: 2; se hace mas pequeño
+  */
+flex-basis:120px ; /*TAMAÑO MINIMO DE TODOSdepende del row o del column*/
+/*flex:grow shrink basis 1 1 120px;*/
+color: white;
+font-size: 2em;
+
+}
+
+.uno{
+    background-color: red;
+   /* flex-grow: 1;
+    width: 100px;
+    order: 4; posicion en la que estara*/
+}
+.dos{
+   /* flex-shrink: 4;MAS PEQUEÑO QUE EL CONTENEDOR DE COLOR ROJO*/
+    background-color:yellow;
+    
+    align-self: center; /*propio del contenedor y no hace que hereden otros*/
+   /* order: 1;*/
+}
+.tres{
+    background-color: green;
+    /*flex-grow: 4;
+    order:3;*/
+}
+.cuatro{
+    background-color: blue;
+   /* flex-grow: 8;
+    align-self: flex-start;align propio de el hijo*/ 
+   /*order:2;*/
+}
